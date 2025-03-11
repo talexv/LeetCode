@@ -9,5 +9,6 @@ func removeDuplicates(nums []int) int {
             nums[uniqueIndex] = nums[i]
         }
     }
+    nums = nums[:uniqueIndex+1]
     return uniqueIndex + 1
 }
