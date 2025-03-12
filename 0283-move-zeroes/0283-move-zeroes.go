@@ -1,3 +1,6 @@
+// Compute: O(n)
+// Memory: O(1)
+
 func moveZeroes(nums []int)  {
     left := 0
     for i := 0; i < len(nums); i++ {
