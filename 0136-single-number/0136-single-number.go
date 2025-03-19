@@ -1,10 +1,13 @@
+package singlenumber
+
 // Compute: O(n)
 // Memory: O(1)
 
+//nolint:unused // solution LeetCode problem
 func singleNumber(nums []int) int {
-    res := 0
-    for _, num := range nums {
-        res ^= num
-    }
-    return res
+	res := 0
+	for _, num := range nums {
+		res ^= num
+	}
+	return res
 }
