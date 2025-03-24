@@ -1,7 +1,7 @@
 package plusone
 
 // Compute: O(n)
-// Memory: O(1)
+// Memory: O(n)
 
 //nolint:unused // solution LeetCode problem
 func plusOne(digits []int) []int {
@@ -13,6 +13,7 @@ func plusOne(digits []int) []int {
 		}
 		digits[i] = 0
 	}
-	digits = append([]int{1}, digits...)
-	return digits
+	result := make([]int, len(digits)+1)
+	result[0] = 1
+	return result
 }
