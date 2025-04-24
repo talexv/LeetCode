@@ -1,14 +1,19 @@
 func reverse(x int) int {
+	const (
+		maxInt32 = 2147483647
+		minInt32 = -2147483648
+	)
+
 	res := 0
 
 	for x != 0 {
 		digit := x % 10
 
-		if res > (math.MaxInt32-digit)/10 {
+		if res > (maxInt32-digit)/10 {
 			return 0
 		}
 
-		if res < (math.MinInt32-digit)/10 {
+		if res < (minInt32-digit)/10 {
 			return 0
 		}
 
