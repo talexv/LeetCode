@@ -1,39 +1,19 @@
-package reverseinteger
-
-import (
-	"math"
-	"strconv"
-)
-
-// Compute: O(n)
-// Memory: O(n)
-
-//nolint:unused // solution LeetCode problem
 func reverse(x int) int {
-	sign := 1
+	res := 0
 
-	if x < 0 {
-		sign = -1
-		x *= sign
-	}
+	for x != 0 {
+		digit := x % 10
 
-	s := strconv.Itoa(x)
-	r := []rune(s)
+		if res > (math.MaxInt32-digit)/10 {
+			return 0
+		}
 
-	for i, j := 0, len(r)-1; i < j; {
-		r[i], r[j] = r[j], r[i]
-		i++
-		j--
-	}
+		if res < (math.MinInt32-digit)/10 {
+			return 0
+		}
 
-	res, err := strconv.Atoi(string(r))
-	if err != nil {
-		return 0
-	}
-
-	res *= sign
-	if res > math.MaxInt32 || res < math.MinInt32 {
-		return 0
+		res = res*10 + digit
+		x /= 10
 	}
 
 	return res
