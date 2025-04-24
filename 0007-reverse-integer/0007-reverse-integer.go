@@ -1,3 +1,9 @@
+package reverseinteger
+
+// Compute: O(log x)
+// Memory: O(1)
+
+//nolint:unused, mnd // solution LeetCode problem
 func reverse(x int) int {
 	const (
 		maxInt32 = 2147483647
