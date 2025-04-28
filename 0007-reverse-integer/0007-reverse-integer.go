@@ -15,11 +15,11 @@ func reverse(x int) int {
 	for x != 0 {
 		digit := x % 10
 
-		if res > (maxInt32-digit)/10 {
+		if res > maxInt32/10 || (res == maxInt32/10 && digit > 7) {
 			return 0
 		}
 
-		if res < (minInt32-digit)/10 {
+		if res < minInt32/10 || (res == minInt32/10 && digit < -8) {
 			return 0
 		}
 
