@@ -9,5 +9,6 @@ func singleNumber(nums []int) int {
 	for _, num := range nums {
 		res ^= num
 	}
+
 	return res
 }

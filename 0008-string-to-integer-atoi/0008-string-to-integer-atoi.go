@@ -1,3 +1,20 @@
+package stringtointegeratoi
+
+import "strings"
+
+//nolint:unused // solution LeetCode problem
+func extractSign(s string) (string, int) {
+	switch s[0] {
+	case '+':
+		return s[1:], 1
+	case '-':
+		return s[1:], -1
+	default:
+		return s, 1
+	}
+}
+
+//nolint:unused, mnd // solution LeetCode problem
 func myAtoi(s string) int {
 	const (
 		maxInt32 = 2147483647
@@ -9,16 +26,7 @@ func myAtoi(s string) int {
 		return 0
 	}
 
-	sign := 1
-
-	switch s[0] {
-	case '+':
-		s = s[1:]
-	case '-':
-		s = s[1:]
-		sign = -1
-	}
-
+	s, sign := extractSign(s)
 	res := 0
 
 	for _, ch := range s {
