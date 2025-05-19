@@ -1,12 +1,17 @@
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+package removenthnodefromendoflist
+
+// Compute: O(n)
+// Memory: O(1)
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+//nolint:unused // solution LeetCode problem
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	var length int
+
 	node := head
 	for node != nil {
 		length++
@@ -19,8 +24,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 
 	node = head
-
-	for i := 0; i < index-1; i++ {
+	for range index - 1 {
 		node = node.Next
 	}
 
