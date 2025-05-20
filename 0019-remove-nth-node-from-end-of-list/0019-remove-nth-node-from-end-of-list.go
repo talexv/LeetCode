@@ -32,3 +32,25 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 	return head
 }
+
+//nolint:unused // solution LeetCode problem
+func remNthFromEnd(head *ListNode, n int) *ListNode {
+	left, right := head, head
+
+	for range n {
+		right = right.Next
+	}
+
+	if right == nil {
+		return head.Next
+	}
+
+	for right.Next != nil {
+		left = left.Next
+		right = right.Next
+	}
+
+	left.Next = left.Next.Next
+
+	return head
+}
